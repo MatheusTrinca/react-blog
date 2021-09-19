@@ -2,6 +2,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+import './src/database';
+
 import express from 'express';
 
 const app = express();

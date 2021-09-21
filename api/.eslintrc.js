@@ -16,5 +16,6 @@ module.exports = {
     'operator-linebreak': 'off',
     camelcase: 'off',
     'comma-dangle': 'off',
+    'object-curly-newline': 'off',
   },
 };

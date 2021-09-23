@@ -1,4 +1,5 @@
 // import bcrypt from 'bcryptjs';
+import Post from '../models/Post';
 import User from '../models/User';
 
 module.exports = {
@@ -18,14 +19,10 @@ module.exports = {
     // Desablilitar
     const userId = req.params.id;
     try {
-      const user = await User.findByPk(userId);
-      const { id, username, email, profile_pic } = user;
-      return res.status(200).json({
-        id,
-        username,
-        email,
-        profile_pic,
+      const user = await User.findByPk(userId, {
+        attributes: ['id', 'username', 'email', 'profile_pic'],
       });
+      return res.status(200).json(user);
     } catch (error) {
       return res.json(null);
     }
@@ -41,7 +38,7 @@ module.exports = {
         password,
       });
       const { id } = newUser;
-      return res.json({
+      return res.status(201).json({
         id,
         username,
         email,

@@ -1,3 +1,4 @@
+import Sidebar from '../../components/sidebar/Sidebar';
 import './settings.css';
 
 const Settings = () => {

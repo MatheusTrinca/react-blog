@@ -35,6 +35,10 @@ class Post extends Model {
 
   static associate(models) {
     this.belongsTo(models.User, { foreignKey: 'user_id' });
+    this.belongsToMany(models.Category, {
+      through: 'post_categories',
+      as: 'categories',
+    });
   }
 }
 export default Post;

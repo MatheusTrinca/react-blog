@@ -17,5 +17,6 @@ module.exports = {
     camelcase: 'off',
     'comma-dangle': 'off',
     'object-curly-newline': 'off',
+    'implicit-arrow-linebreak': 'off',
   },
 };

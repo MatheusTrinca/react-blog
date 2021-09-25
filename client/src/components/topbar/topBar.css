@@ -58,3 +58,8 @@
   cursor: pointer;
   margin-left: 15px;
 }
+
+.active {
+  color: teal;
+  font-weight: 500;
+}

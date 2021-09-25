@@ -27,6 +27,7 @@
 }
 
 .loginInput {
+  width: 250px;
   padding: 10px;
   background-color: white;
   border: none;
@@ -48,7 +49,8 @@
   text-align: center;
 }
 
-.loginRegisterButton {
+.loginRegisterButton,
+.loginRegisterButton:link {
   position: absolute;
   top: 60px;
   right: 20px;

@@ -13,7 +13,9 @@ module.exports = {
   },
   async index(req, res) {
     try {
-      const cats = await Category.findAll();
+      const cats = await Category.findAll({
+        attributes: ['id', 'name'],
+      });
       return res.status(200).json(cats);
     } catch (err) {
       return res.status(400).json({

@@ -13,7 +13,6 @@ module.exports = {
           where: {
             user_id: userId,
           },
-          attributes: ['id', 'title', 'description', 'photo'],
           include: {
             model: Category,
             as: 'categories',
@@ -30,7 +29,6 @@ module.exports = {
         posts = category.posts;
       } else {
         posts = await Post.findAll({
-          attributes: ['id', 'title', 'description', 'photo'],
           include: [
             {
               model: User,
@@ -63,7 +61,7 @@ module.exports = {
         });
       }
       const post = await Post.findByPk(id, {
-        attributes: ['id', 'title', 'description', 'photo'],
+        attributes: ['id', 'title', 'description', 'photo', 'created_at'],
         include: {
           model: User,
           attributes: ['id', 'username', 'email', 'profile_pic'],

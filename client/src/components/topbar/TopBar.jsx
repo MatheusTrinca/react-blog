@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Context } from '../../context/Context';
 import './topBar.css';
 
 const TopBar = () => {
-  const user = false;
+  const { user, dispatch } = useContext(Context);
+
+  const logoutHandler = () => {
+    dispatch({ type: 'LOGOUT' });
+  };
+
   return (
     <div className="top">
       <div className="topIcon topLeft">
@@ -34,6 +40,11 @@ const TopBar = () => {
               WRITE
             </NavLink>
           </li>
+          {user && (
+            <li onClick={logoutHandler} className="topListItem">
+              LOGOUT
+            </li>
+          )}
         </ul>
       </div>
       <div className="topRight">
@@ -41,8 +52,8 @@ const TopBar = () => {
           <NavLink to="/settings">
             <img
               className="topImg"
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
+              src={user.user.profile_pic}
+              alt={user.user.username}
             />
           </NavLink>
         ) : (

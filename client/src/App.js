@@ -13,9 +13,11 @@ import {
 } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from 'react';
+import { Context } from './context/Context';
 
 function App() {
-  const user = false;
+  const { user } = useContext(Context);
   return (
     <div className="App">
       <Router>

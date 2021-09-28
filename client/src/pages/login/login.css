@@ -49,6 +49,11 @@
   text-align: center;
 }
 
+.loginButton:disabled {
+  cursor: not-allowed;
+  background-color: #fdb1b1;
+}
+
 .loginRegisterButton,
 .loginRegisterButton:link {
   position: absolute;

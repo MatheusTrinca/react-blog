@@ -21,7 +21,7 @@ module.exports = {
           errors: ['invalid email or password'],
         });
       }
-      const { id } = user;
+      const { id, profile_pic } = user;
       const token = jwt.sign({ id, email }, process.env.TOKEN_SECRET, {
         expiresIn: process.env.TOKEN_EXPIRATION,
       });
@@ -30,6 +30,7 @@ module.exports = {
         user: {
           username: user.username,
           email,
+          profile_pic,
         },
       });
     } catch (err) {

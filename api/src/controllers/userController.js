@@ -1,5 +1,4 @@
 // import bcrypt from 'bcryptjs';
-import Post from '../models/Post';
 import User from '../models/User';
 
 module.exports = {

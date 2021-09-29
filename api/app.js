@@ -6,6 +6,7 @@ import './src/database';
 
 import express from 'express';
 import multer from 'multer';
+import path from 'path';
 import userRoutes from './src/routes/userRoutes';
 import authRoutes from './src/routes/authRoutes';
 import postRoutes from './src/routes/postRoutes';
@@ -16,6 +17,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use('/images', express.static(path.join(__dirname, 'src', 'images')));
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {

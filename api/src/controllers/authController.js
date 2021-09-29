@@ -28,6 +28,7 @@ module.exports = {
       return res.status(200).json({
         token,
         user: {
+          id,
           username: user.username,
           email,
           profile_pic,
